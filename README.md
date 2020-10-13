@@ -7,15 +7,15 @@ mvn clean install
 
 On successful execution of the command, below things will happen:
 1. Execute all test cases
-2. Compile the code and generate two artifacts under `target` folder. The artifacts are JAR file: "myob-payslip-generator.jar" and "myob-payslip-generator-jar-with-dependencies.jar". These Jar files are with and without third-party dependencies, respectively.
+2. Compile the code and generate two artifacts under `target` folder. The artifacts are JAR file: `myob-payslip-generator.jar` and `myob-payslip-generator-jar-with-dependencies.jar`. These Jar files are with and without third-party dependencies, respectively.
 
 To run the artifact:
-1. The artifact named 'myob-payslip-generator-jar-with-dependencies.jar' is the one which is an executable artifact. Use below command to execute artifact:
+1. The artifact named `myob-payslip-generator-jar-with-dependencies.jar` is the one which is an executable artifact. Use below command to execute artifact:
 
-java -jar myob-payslip-generator-jar-with-dependencies.jar <<INPUT_FILE_LOCATION>> <<OUTPUT_FILE_LOCATION>>
+`java -jar myob-payslip-generator-jar-with-dependencies.jar <<INPUT_FILE_LOCATION>> <<OUTPUT_FILE_LOCATION>>`
 
 example:
-java -jar myob-payslip-generator-jar-with-dependencies.jar F:\data\input.csv F:\data\output.csv
+`java -jar myob-payslip-generator-jar-with-dependencies.jar F:\data\input.csv F:\data\output.csv`
 
 Assumption:
 1. OpenCSV dependency is used to read and write CSV files
