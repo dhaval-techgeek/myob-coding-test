@@ -33,3 +33,4 @@ Assumption:
 
 6. To add new tax slab, we need a code change for now. It's not configurable externally.
 7. When the artifact will run, it will generate the log file at the same place where the JAR is located
+8. Providing both files in the command line arguments, while running the JAR, in the required format is necessary.
