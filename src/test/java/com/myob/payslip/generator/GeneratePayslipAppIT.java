@@ -1,4 +1,4 @@
-package com.myob.payslip.generator.test;
+package com.myob.payslip.generator;
 
 import org.junit.internal.runners.JUnit4ClassRunner;
 import org.junit.runner.RunWith;
