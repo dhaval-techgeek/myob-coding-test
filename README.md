@@ -1,7 +1,7 @@
 # myob-coding-test
 payslip-generator
 
-This is a project developed using Maven build tool. To compile this project, use below command:
+This project is developed using Java8 and Maven build tool. To compile this project, use below command:
 
 mvn clean install
 
