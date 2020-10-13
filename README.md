@@ -5,7 +5,7 @@ This is a project developed using Maven build tool. To compile this project, use
 
 mvn clean install
 
-On execution of the command, below things will happen:
+On successful execution of the command, below things will happen:
 1. Execute all test cases
 2. Compile the code and generate two artifacts under `target` folder. The artifacts are JAR file: "myob-payslip-generator.jar" and "myob-payslip-generator-jar-with-dependencies.jar". These Jar files are with and without third-party dependencies, respectively.
 
@@ -23,12 +23,12 @@ Assumption:
 3. Log4J dependency is used for log generation
 4. The input CSV should follow below structure (Columns are: first name, last name, annual salary, super rate (%), payment start date). The input CSV should be without header row in CSV. In the super rate, percentage sign(%) is optional:
 
-  David,Rudd,60050,9%,01 March – 31 March
+  David,Rudd,60050,9%,01 March – 31 March<br />
   Ryan,Chen,120000,10%,01 March – 31 March
 
 5. The output will be follow below structure (Columns are: name, pay period, gross income, income tax, net income, super)
 
-  David Rudd,01 March – 31 March,5004,922,4082,450
+  David Rudd,01 March – 31 March,5004,922,4082,450<br />
   Ryan Chen,01 March – 31 March,10000,2696,7304,1000
 
 6. To add new tax slab, we need a code change for now. It's not configurable externally.
