@@ -1,5 +1,11 @@
 package com.myob.payslip.generator.model;
 
+/**
+ * 
+ * @author Dhaval Shah
+ * @version 1.0
+ * @since 13/October/2020
+ */
 public class TaxSlab {
 	private double incomeRangeStart;
 	private double incomeRangeEnd;
@@ -57,4 +63,10 @@ public class TaxSlab {
 		this.perDollarTaxOverThreshold = perDollarTaxOverThreshold;
 	}
 
+	@Override
+	public String toString() {
+		return "TaxSlab [incomeRangeStart=" + incomeRangeStart + ", incomeRangeEnd=" + incomeRangeEnd + ", threshold="
+				+ threshold + ", fixedTax=" + fixedTax + ", perDollarTaxOverThreshold=" + perDollarTaxOverThreshold
+				+ "]";
+	}
 }

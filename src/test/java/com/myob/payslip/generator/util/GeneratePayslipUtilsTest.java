@@ -1,12 +1,15 @@
 package com.myob.payslip.generator.util;
 
+import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertThat;
 
 import org.junit.Before;
 import org.junit.Test;
 
 import com.myob.payslip.generator.model.Payslip;
-import com.myob.payslip.generator.util.GeneratePayslipUtils;
+import com.myob.payslip.generator.model.TaxSlab;
 
 public class GeneratePayslipUtilsTest {
 
@@ -68,5 +71,12 @@ public class GeneratePayslipUtilsTest {
 				GeneratePayslipUtils.calculateSuper(
 						GeneratePayslipUtils.calculateGrossIncome(payslip2.getAnnualSalary()), payslip2.getSuperRate()),
 				0.0);
+	}
+	
+	@Test
+	public void getSuitableTaxSlabTest() {
+		assertNotNull(GeneratePayslipUtils.getSuitableTaxSlab(payslip2.getAnnualSalary()));
+		assertThat(GeneratePayslipUtils.getSuitableTaxSlab(payslip2.getAnnualSalary()), instanceOf(TaxSlab.class));
+
 	}
 }

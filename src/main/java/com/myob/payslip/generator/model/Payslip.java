@@ -1,5 +1,11 @@
 package com.myob.payslip.generator.model;
 
+/**
+ * 
+ * @author Dhaval Shah
+ * @version 1.0
+ * @since 13/October/2020
+ */
 public class Payslip {
 	private String empFirstName;
 	private String empLastName;

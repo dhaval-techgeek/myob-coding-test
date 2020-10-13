@@ -14,6 +14,17 @@ import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 import com.opencsv.exceptions.CsvValidationException;
 
+/**
+ * 
+ * @author Dhaval Shah
+ * @version 1.0
+ * @since 13/October/2020
+ * 
+ * This class is a simple application to generate payslip by reading the CSV file and writing the output to CSV
+ * 
+ * The application is reading the input and output file path from command line
+ *
+ */
 public class GeneratePayslipApp {
 
 	public static final Logger LOGGER = Logger.getLogger(GeneratePayslipApp.class);
