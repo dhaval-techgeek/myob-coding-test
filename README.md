@@ -32,4 +32,4 @@ Assumption:
   Ryan Chen,01 March – 31 March,10000,2696,7304,1000
 
 6. To add new tax slab, we need a code change for now. It's not configurable externally.
-
+7. When the artifact will run, it will generate the log file at the same place where the JAR is located

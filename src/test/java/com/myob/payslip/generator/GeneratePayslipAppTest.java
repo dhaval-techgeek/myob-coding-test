@@ -25,6 +25,7 @@ import com.opencsv.exceptions.CsvValidationException;
 public class GeneratePayslipAppTest {
 
 	private CSVReader csvReader;
+	private CSVReader csvReaderForInputWithoutPercentageSignInSuper;
 	private CSVWriter csvWriter;
 	private CSVReader outputCsvReader;
 	private int numberOfInputRecordsInCSV = 2;
@@ -35,7 +36,9 @@ public class GeneratePayslipAppTest {
 	public void setup() throws URISyntaxException, IOException {
 		URL inputResource = getClass().getClassLoader().getResource("test-input.csv");
 		URL outputResource = getClass().getClassLoader().getResource("test-output.csv");
+		URL inputResource2 = getClass().getClassLoader().getResource("test-input-without-percentage-in-super.csv");
 		csvReader = new CSVReader(new FileReader(new File(inputResource.toURI())));
+		csvReaderForInputWithoutPercentageSignInSuper =  new CSVReader(new FileReader(new File(inputResource2.toURI())));
 		csvWriter = new CSVWriter(new FileWriter(new File(outputResource.toURI())));
 		outputCsvReader = new CSVReader(new FileReader(new File(outputResource.toURI())));
 	}
@@ -44,6 +47,14 @@ public class GeneratePayslipAppTest {
 	public void preparePayslipInputAsListTest() throws CsvValidationException, IOException
 	{
 		List<Payslip> payslipList =  GeneratePayslipUtils.preparePayslipInputAsList(csvReader);
+		assertThat(payslipList, instanceOf(ArrayList.class));
+		assertEquals(numberOfInputRecordsInCSV, payslipList.size());
+	}
+
+	@Test
+	public void preparePayslipInputAsListForInputWithoutPercentageSignInSuperTest() throws CsvValidationException, IOException
+	{
+		List<Payslip> payslipList =  GeneratePayslipUtils.preparePayslipInputAsList(csvReaderForInputWithoutPercentageSignInSuper);
 		assertThat(payslipList, instanceOf(ArrayList.class));
 		assertEquals(numberOfInputRecordsInCSV, payslipList.size());
 	}
